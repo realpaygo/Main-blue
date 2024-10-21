@@ -15,7 +15,7 @@
     <div class="top">
         <img src="ma.jpeg" alt="">
         <img src="noti.jpeg" alt="" style="float: right; padding-left: 10px;">
-        <p>Hi,  hhh@!</p>
+        <p id="usernameText"></p>
     </div> <br> <br> <br>  <br>
     <div class="box">
         <p>Today Balance</p>
@@ -52,7 +52,7 @@
     <div id="popup-container">
         <div id="popup-content">
             <h2>Welcome</h2>
-            <p><span>hhh@</span> you have been geven 200,000 to <br> withdraw every day. dont click  on the reset botton untill tomorrow, else you will be baned join group
+            <p><span id="username"></span> you have been geven 200,000 to <br> withdraw every day. dont click  on the reset botton untill tomorrow, else you will be baned join group
             <a style="color: blue;" href="https://t.me/opaybeta1">Here</a></p> <br> 
             <button id="close-popup">Close</button>  <button style="background:blue;" id="close-popup"><a href="#">Reset</a></button>
         </div>
@@ -109,6 +109,13 @@
         const urlParams = new URLSearchParams(window.location.href.split('?')[1]);
 
         avaB = urlParams.get('BA');
+        username = urlParams.get('username');
+        console.log(document.getElementById("username"));
+        document.getElementById("username").innerText = username;
+        document.getElementById("usernameText").innerText = "Hi, "+username.replace("@gmail.com", "");
+
+        console.log(document.getElementById("username"));
+        
 
         if(avaB==null){
             avaB="200000"
