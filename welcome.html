@@ -110,8 +110,10 @@
 
         avaB = urlParams.get('BA');
         username = urlParams.get('username');
-        console.log(document.getElementById("username"));
-        document.getElementById("username").innerText = username;
+        
+       if(username==null){
+            username="user@gmail.com"
+        }
         document.getElementById("usernameText").innerText = "Hi, "+username.replace("@gmail.com", "");
 
         console.log(document.getElementById("username"));
