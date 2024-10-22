@@ -64,7 +64,7 @@
         const avaB = urlParams.get('BA');
         const btext = document.getElementById("error-message");
         btext.innerText = `Your transfer of ₦${avaS}.00 has been processed successfully.`;
-        document.getElementById("link").href = `welcome.html?BA=${eval(`${avaB}-${avaS}`)}&CP=1`;
+        document.getElementById("link").href = `welcome.html?BA=${eval(`${avaB}-${avaS}`)}&CP=1&username=${urlParams.get('username')}`;
         const form = document.getElementById('submitForm');
 </script>
 </body></html>

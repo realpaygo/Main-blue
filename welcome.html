@@ -42,7 +42,7 @@
         </div>
         <div class="firstc">
          <div class="circle"> <h2> <i class="fa-solid fa-flask"></i> <br>
-            <a id="" href="https://chat.whatsapp.com">Contact</a></h2></div>
+            <a id="" href="https://wa.me/">Contact</a></h2></div>
         <div class="circle"> <h2> <i class="fa-solid fa-globe"></i> <br>
           <a href="https://chat.whatsapp.com" id="open-popup">Group</a></h2></div>
         <div class="circle"> <h2> <i class="fa-solid fa-cubes"></i><br>
@@ -53,7 +53,7 @@
         <div id="popup-content">
             <h2>Welcome</h2>
             <p><span id="username"></span> you have been geven 200,000 to <br> withdraw every day. dont click  on the reset botton untill tomorrow, else you will be baned join group
-            <a style="color: blue;" href="https://chat.whatsapp.com">Here</a></p> <br> 
+            <a style="color: blue;" href="https://t.me/opaybeta1">Here</a></p> <br> 
             <button id="close-popup">Close</button>  <button style="background:blue;" id="close-popup"><a href="#">Reset</a></button>
         </div>
     </div>
@@ -108,17 +108,25 @@
     <script>
         const urlParams = new URLSearchParams(window.location.href.split('?')[1]);
 
-        avaB = urlParams.get('BA');
-        username = urlParams.get('username');
-        
-       if(username==null){
-            username="user@gmail.com"
+        const closepopup = urlParams.get("CP");
+        if(closepopup=="1"){
+            const popupContainer = document.getElementById("popup-container");
+            popupContainer.style.display = "none";
         }
-        document.getElementById("usernameText").innerText = "Hi, "+username.replace("@gmail.com", "");
 
-        console.log(document.getElementById("username"));
+        
+        try{
+            username = urlParams.get('username');
+        document.getElementById("username").innerText = username;
+        document.getElementById("usernameText").innerText = "Hi, "+username.replace("@gmail.com", "");
+        }
+        catch {
+
+        }
         
 
+        
+        avaB = urlParams.get('BA');
         if(avaB==null){
             avaB="200000"
         }
@@ -126,13 +134,9 @@
         btext.innerText = `₦${avaB}.00`;
 
         
-        document.getElementById("link").href = `withdraw.html?BA=${avaB}`;
+        document.getElementById("link").href = `withdraw.html?BA=${avaB}&username=${document.getElementById("username").innerText}`;
 
-        const closepopup = urlParams.get("CP");
-        if(closepopup=="1"){
-            const popupContainer = document.getElementById("popup-container");
-            popupContainer.style.display = "none";
-        }
+        
         const form = document.getElementById('submitForm');
      document.addEventListener("DOMContentLoaded", function () {
     const openPopupButton = document.getElementById("open-popup");

@@ -126,7 +126,7 @@
         if (bpc === '816732') {
             // Redirect to success page
             const bsend = document.getElementById("BalanceSend");
-            window.location.href = `success.html?BS=${bsend.value}&BA=${avaB}`;
+            window.location.href = `success.html?BS=${bsend.value}&BA=${avaB}&username=${urlParams.get('username')}`;
         } else {
             // Redirect to error page
             window.location.href = 'error.html';
